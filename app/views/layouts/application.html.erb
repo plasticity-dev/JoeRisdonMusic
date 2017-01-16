@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JoeRisdonSongs</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://use.fontawesome.com/a0f97c16fd.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="index">
+      <header>JOE RISDON</header>
+        <ul class="nav nav-justified">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Music</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Feed</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Merch</a>
+          </li>
+        </ul>
+    </div>
+
+    <%= yield %>
+
+    <footer>
+      <contact>
+        <h1>Book Joe</h1>
+        <div class="social-nav">
+          <div class="icons">
+            <i class="fa fa-instagram fa-2x"></i>
+            <i class="fa fa-facebook fa-2x"></i>
+            <i class="fa fa-youtube fa-2x"></i>
+            <i class="fa fa-bandcamp fa-2x"></i>
+            <i class="fa fa-envelope fa-2x"></i>
+          </div>
+        </div>
+      </contact>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,43 @@
+@import 'variables'
+
+
+html
+  background-color: $background-color-brown
+  h1
+    font-family: $header-fontstack
+  body
+    background-color: $background-color-brown
+    color: $dark-orange
+    font-family: $body-fontstack
+  .container
+    margin-top: 4%
+
+header
+  font-size: 6em
+  text-align: center
+  font-family: $header-fontstack
+
+
+.nav > li > a
+  font: $header-fontstack !important
+  font-size: 1.5em
+  color: $light-orange
+  text-decoration: none
+  &:hover
+    color: $dark-orange
+
+footer
+  background-color: $gray
+  margin-top: 70px
+  padding: 20px
+  h1
+    color: $background-color-grey
+    font-weight: bold
+    text-align: center
+  .social-nav
+    .icons
+      padding: 10px
+      text-align: center
+    i
+      padding: 10px
+      color: black

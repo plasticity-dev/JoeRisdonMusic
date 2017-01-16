@@ -1,0 +1,48 @@
+@import 'variables';
+
+.instagram {
+  margin-top: 40px;
+
+  .photos_container {
+    margin: auto;
+    margin-top: 20px;
+
+    @media only screen and (min-width: $break-xs){
+      width: 318px;
+    }
+    @media only screen and (min-width: $break-sm){
+      width: 468px;
+    }
+    @media only screen and (min-width: $break-md) {
+      width: 618px;
+    }
+    @media only screen and (min-width: $break-lg) {
+      width: 768px;
+    }
+
+    img {
+      border: 3px solid white;
+      display: inline-block;
+      margin: 3px;
+      margin-top: 6px;
+      width: 250px;
+      height: 250px;
+      @media only screen and (min-width: $break-xs){
+        width: 100px;
+        height: 100px;
+      }
+      @media only screen and (min-width: $break-sm){
+        width: 150px;
+        height: 150px;
+      }
+      @media only screen and (min-width: $break-md) {
+        width: 200px;
+        height: 200px;
+      }
+      @media only screen and (min-width: $break-lg) {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}

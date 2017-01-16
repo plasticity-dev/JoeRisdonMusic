@@ -1,0 +1,59 @@
+@import 'variables';
+
+
+.albums {
+  .albums-container {
+    margin: auto;
+
+    @media only screen and (min-width: $break-xs){
+      width: 318px;
+    }
+    // @media only screen and (min-width: $break-sm){
+    //   width: 468px;
+    // }
+    @media only screen and (min-width: $break-md) {
+      width: 568px;
+    }
+    @media only screen and (min-width: $break-lg) {
+      width: 1124px;
+    }
+    a {
+      text-decoration: none; 
+    }
+    .album {
+      margin: 3px;
+      .album-title {
+        text-align: center;
+        color: $dark-orange;
+      }
+      &:hover {
+        color: $light-orange;
+      }
+      img {
+        border: 4px solid $light-orange;
+        width: 250px;
+        height: 250px;
+        // margin: 3px;
+        &:hover {
+          border-color: $dark-orange;
+        }
+        @media only screen and (min-width: $break-xs){
+          width: 300px;
+          height: 300px;
+        }
+        @media only screen and (min-width: $break-md) {
+          width: 270px;
+          height: 270px;
+        }
+      }
+      @media only screen and (min-width: $break-xs){
+        width: 300px;
+        height: 350px;
+      }
+      @media only screen and (min-width: $break-md) {
+        width: 270px;
+        height: 320px;
+      }
+    }
+  }
+}
