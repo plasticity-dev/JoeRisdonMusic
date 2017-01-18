@@ -1,6 +1,7 @@
 @import 'variables'
 
 
+
 html
   background-color: $background-color-brown
   h1
@@ -9,22 +10,31 @@ html
     background-color: $background-color-brown
     color: $dark-orange
     font-family: $body-fontstack
+    .nav-spacer
+      height: 1px 
+      margin-top: 70px
   .container
     margin-top: 4%
+
 
 header
   font-size: 6em
   text-align: center
   font-family: $header-fontstack
 
+.navbar
+  background-color: $background-color-grey
+  min-height: 70px
+  i.fa-bars
+    color: $dark-orange
 
 .nav > li > a
   font: $header-fontstack !important
   font-size: 1.5em
-  color: $light-orange
+  color: $light-orange !important
   text-decoration: none
   &:hover
-    color: $dark-orange
+    color: $dark-orange !important
 
 footer
   background-color: $gray
