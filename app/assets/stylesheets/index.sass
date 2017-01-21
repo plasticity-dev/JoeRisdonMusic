@@ -4,34 +4,43 @@
 
 html
   background-color: $background-color-brown
+  text-transform: uppercase
   h1
     font-family: $header-fontstack
   body
     background-color: $background-color-brown
-    color: $dark-orange
+    color: $pale-yellow
     font-family: $body-fontstack
     .nav-spacer
-      height: 1px 
+      height: 1px
+      background-color: $light-orange
       margin-top: 70px
   .container
     margin-top: 4%
 
 
 header
-  font-size: 6em
+  font-size: 5em
   text-align: center
   font-family: $header-fontstack
 
 .navbar
-  background-color: $background-color-grey
+  background-color: $light-orange
   min-height: 70px
   i.fa-bars
-    color: $dark-orange
+    color: $pale-yellow
+  .navbar-brand
+    font-family: $header-fontstack
+    letter-spacing: 1px
+    color: $pale-yellow
+    &:hover
+      color: $dark-orange
 
 .nav > li > a
-  font: $header-fontstack !important
+  font-family: $header-fontstack
+  letter-spacing: 1px
   font-size: 1.5em
-  color: $light-orange !important
+  color: $pale-yellow !important
   text-decoration: none
   &:hover
     color: $dark-orange !important

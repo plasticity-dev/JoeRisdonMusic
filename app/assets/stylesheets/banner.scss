@@ -1,0 +1,40 @@
+@import 'variables';
+
+.banner {
+  background-color: $light-orange;
+  min-height: 100px;
+
+  .banner-container{
+    max-width: 889px;
+    margin: auto;
+
+    .header-text{
+      display: inline-block;
+      font-family: $header-fontstack;
+      color: $pale-yellow;
+      font-size: 6em;
+      }
+    .img-container{
+      display: inline-block;
+
+      .main-logo{
+        height: 250px;
+        }
+      }
+    }
+  }
+
+@media only screen and (max-width: 888px) {
+  .banner-container {
+    .header-text {
+      display: inline;
+      width: 100%;
+      text-align: center;
+    }
+    .img-container {
+      display: block;
+      width: 215px;
+      margin-left:27%;
+    }
+  }
+}
