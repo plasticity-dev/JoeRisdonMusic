@@ -12,7 +12,9 @@
   <body>
     <div class="nav-spacer hidden-md-up"></div>
     <div class="index">
-      <header>JOE RISDON</header>
+      <!-- <header>JOE RISDON</header> -->
+      <%= render "/banner"%>
+
       <!-- regular justified nav-bar -->
       <!-- As of BS4.alpha6 .nav-justified will not work w/ .navbar-toggleable -->
         <ul class="nav nav-justified hidden-sm-down">
@@ -30,10 +32,11 @@
           </li>
         </ul>
         <!-- collapsed navbar -->
-        <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse hidden-md-up">
+        <nav class="navbar fixed-top navbar-toggleable-md  navbar-inverse hidden-md-up">
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars fa-2x"></i>
           </button>
+          <a class="navbar-brand" href="#">JOE RISDON</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav nav">
                 <li class="nav-item">
