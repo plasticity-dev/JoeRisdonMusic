@@ -18,16 +18,16 @@
       width: 1124px;
     }
     a {
-      text-decoration: none; 
+      text-decoration: none;
     }
     .album {
       margin: 3px;
       .album-title {
         text-align: center;
-        color: $dark-orange;
-      }
-      &:hover {
-        color: $light-orange;
+        color: $pale-yellow;
+        // &:hover {
+        // color: $light-orange;
+        // }
       }
       img {
         border: 4px solid $light-orange;
@@ -35,7 +35,7 @@
         height: 250px;
         // margin: 3px;
         &:hover {
-          border-color: $dark-orange;
+          border-color: $pale-yellow;
         }
         @media only screen and (min-width: $break-xs){
           width: 300px;
@@ -55,5 +55,30 @@
         height: 320px;
       }
     }
+  }
+}
+
+.fa-bandcamp {
+  color: $pale-yellow;
+  &:hover {
+    color: $light-orange;
+  }
+}
+
+.admin-links {
+  text-align: center;
+}
+
+.new_album_button {
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  border: 1px dashed $pale-yellow;
+  text-align: center;
+  a {
+    color: $pale-yellow;
+    vertical-align: middle;
+    line-height: 250px;
+    font-size: 7em;
   }
 }

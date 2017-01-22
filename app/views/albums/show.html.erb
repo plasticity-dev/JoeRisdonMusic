@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1><%= @album.title %></h1>
+    <h5>( <%= @album.year %> )</h5>
+  <%= image_tag("#{@album.artwork_url}", style: "width: 350px; height: 350px;")%>
+
+  <p>
+    <strong>Tracks:</strong> <%= @album.track_count %>
+  </p>
+
+  <p>
+    <strong>Artist:</strong>
+    <%= @album.artist %>
+  </p>
+
+  <p>
+    <strong>Check it out:</strong>
+    <%= link_to("<i class='fa fa-bandcamp fa-lg'></i>".html_safe, @album.bandcamp_link, target: "_blank" ) %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @album.description %>
+  </p>
+
+  <p>
+    <strong>Released:</strong>
+    <%= @album.release_date %>
+  </p>
+
+  <%= link_to 'Edit', edit_album_path(@album) %> |
+  <%= link_to 'Back', albums_path %>
+
+</div>

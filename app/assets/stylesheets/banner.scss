@@ -11,9 +11,15 @@
     .header-text{
       display: inline-block;
       font-family: $header-fontstack;
-      color: $pale-yellow;
       font-size: 6em;
+      a {
+        text-decoration: none;
+        color: $pale-yellow;
+        &:hover {
+          text-decoration: underline;
+        }
       }
+    }
     .img-container{
       display: inline-block;
 
