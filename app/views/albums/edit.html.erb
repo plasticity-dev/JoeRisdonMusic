@@ -1,6 +1,50 @@
-<h1>Editing Album</h1>
+<div class="container new-album-page">
 
-<%= render 'form', album: @album %>
+  <script>
+    $(document).on('turbolinks:load', function() {
+      $("#spinner").spinner()
+      $("#datepicker").datepicker({
+        changeYear: true
+      });
+    });
+  </script>
 
-<%= link_to 'Show', @album %> |
-<%= link_to 'Back', albums_path %>
+  <h1>Edit Album</h1>
+
+  <%= form_for @album do |f| %>
+    <div class="form-group row col-md-8 dude">
+
+      <!-- <%= f.label :title %>: -->
+      <%= f.text_field :title, class: "form-control", placeholder: "Album Title", required: true %>
+
+      <div class="col-sm-8 sm-form-item">
+        <!-- <%= f.label :artist %>: -->
+        <%= f.text_field :artist, class: "form-control", placeholder: "Artist", required: true %>
+      </div>
+
+      <div class="col-sm-4 number-spinner">
+        <!-- <%= f.label :track_count %>: -->
+        <div class="number-spinner">
+          <%= f.text_field :track_count, id: "spinner", name: "value", class: "form-control", placeholder: "Track Count", type: "number", min: "1", max: "50", required: true %>
+        </div>
+      </div>
+
+      <!-- <%= f.label :release_date %>: -->
+      <%= f.text_field :release_date, id:"datepicker", class: "form-control", placeholder: "Release Date", required: true %>
+
+      <!-- <%= f.label :bandcamp_link %>: -->
+      <%= f.text_field :bandcamp_link, class: "form-control", placeholder: "Bandcamp Link", required: true %>
+
+      <!-- <%= f.label :artwork_url %>: -->
+      <%= f.text_field :artwork_url, class: "form-control", placeholder: "Artwork Url", required: true %>
+
+      <!-- <%= f.label :description %>: -->
+      <%= f.text_field :description, class: "form-control", placeholder: "Description" %>
+
+      <%= f.submit "Add Album", type: "submit", class: "btn btn-block btn-primary col-xs-12" %>
+    </div>
+
+  <% end %>
+
+  <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i> Back'.html_safe , albums_path, class: "back-button btn-primary btn" %>
+</div>
