@@ -1,5 +1,5 @@
 <div class="instagram">
-  <h1 class="container">Instagram</h1>
+  <%= link_to("<h1 class='container'>Instagram</h1>".html_safe, "/insta") %>
 
   <div class="photos_container row">
     <% instagramposts[0..8].each do |image|%>

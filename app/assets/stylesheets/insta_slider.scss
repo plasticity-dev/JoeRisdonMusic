@@ -2,7 +2,9 @@
 
 .instagram {
   margin-top: 40px;
-
+  a {
+    color: $pale-yellow;
+  }
   .photos_container {
     margin: auto;
     margin-top: 20px;

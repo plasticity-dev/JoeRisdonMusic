@@ -58,8 +58,6 @@
         </nav>
     </div>
 
-
-
     <%= yield %>
 
     <footer>
@@ -67,11 +65,11 @@
         <h1>Book Joe</h1>
         <div class="social-nav">
           <div class="icons">
-            <i class="fa fa-instagram fa-2x"></i>
-            <i class="fa fa-facebook fa-2x"></i>
-            <i class="fa fa-youtube fa-2x"></i>
-            <i class="fa fa-bandcamp fa-2x"></i>
-            <i class="fa fa-envelope fa-2x"></i>
+            <%=link_to("<i class='fa fa-instagram fa-2x'></i>".html_safe,"https://www.instagram.com/joerisdonsongs/", target: 'blank')%>
+            <%=link_to("<i class='fa fa-facebook fa-2x'></i>".html_safe, "https://www.facebook.com/joerisdonsongs/", target: 'blank')%>
+            <%=link_to("<i class='fa fa-youtube fa-2x'></i>".html_safe, "https://www.youtube.com/channel/UCkIsdG0MQnU8HkVqWLYPyWw", target: 'blank') %>
+            <%=link_to("<i class='fa fa-bandcamp fa-2x'></i>".html_safe, "https://joerisdon.bandcamp.com/", target: 'blank') %>
+            <%=link_to("<i class='fa fa-envelope fa-2x'></i>".html_safe, "#", target: 'blank') %>
           </div>
         </div>
       </contact>

@@ -1,5 +1,5 @@
 <div class="albums">
-  <h1 class="container">Albums</h1>
+  <%= link_to("<h1 class='container'>Albums</h1>".html_safe, "/albums", class: "header-link") %>
 
   <div class="albums-container row">
     <% @albums.each do |album| %>
