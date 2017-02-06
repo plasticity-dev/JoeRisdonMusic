@@ -9,7 +9,9 @@
     .form-control{
       font-size: 1.1em;
       height: 60px;
-
+    }
+    .text-area {
+      height: 120px;
     }
   }
   .sm-form-item {
@@ -30,5 +32,10 @@
 
   .btn-block {
     margin-top: 20px;
+  }
+
+  .back-button {
+    margin-top: 15px;
+    margin-left: 15px;
   }
 }

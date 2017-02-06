@@ -2,13 +2,14 @@
   <h1 class="container">Albums</h1>
 
   <div class="albums-container row">
-
-    <a href="/albums/1">
-      <div class="album">
-        <%= image_tag('homegrownart.jpg', class: "") %>
-        <p class="album-title">Homegrown (2016)</p>
-      </div>
-    </a>
+    <% @albums.each do |album| %>
+      <a href='/albums/<%=album.id%>'>
+        <div class="album">
+          <%= image_tag(album.artwork_url, class: "") %>
+          <p class="album-title"><%= album.title %> <%= album.year %></p>
+        </div>
+      </a>
+    <% end %>
 
   </div>
 

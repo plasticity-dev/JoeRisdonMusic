@@ -23,7 +23,8 @@
     .album {
       margin: 3px;
       .album-title {
-        text-align: center;
+        display: table;
+        margin: auto;
         color: $pale-yellow;
         // &:hover {
         // color: $light-orange;
@@ -33,7 +34,8 @@
         border: 4px solid $light-orange;
         width: 250px;
         height: 250px;
-        // margin: 3px;
+        display: table;
+        margin: auto;
         &:hover {
           border-color: $pale-yellow;
         }
@@ -66,10 +68,15 @@
 }
 
 .admin-links {
-  text-align: center;
+  display: table;
+  margin: auto;
+  margin-top: 5px;
+  a {
+    margin: 2px;
+  }
 }
 
-.new_album_button {
+.new-album-button {
   display: inline-block;
   height: 250px;
   width: 250px;
@@ -81,4 +88,55 @@
     line-height: 250px;
     font-size: 7em;
   }
+  &:hover {
+    border-color: $light-orange;
+    a {
+      color: $light-orange;
+    }
+  }
+}
+
+
+.album-show-page {
+  .outer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  strong {
+    color: $light-orange;
+  }
+  .artist{
+    margin-right: 10px;
+  }
+  .album-description {
+    margin-top: 20px;
+    max-width: 450px;
+  }
+  .check-it-out {
+    margin-top: 20px;
+  }
+  .title-year {
+    h1 {
+      display: inline-block;
+    }
+    .year {
+      vertical-align: top;
+      display: inline-block;
+    }
+  }
+  .hide-btn-container {
+    height: 80px;
+    .hide-partial-btn {
+      margin-top: 30px;
+      position: absolute;
+      bottom:10px;
+      right:25px;
+    }
+  }
+
+}
+
+.hidden {
+  display: none;
 }
