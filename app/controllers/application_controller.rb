@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     render "home/index"
   end
 
+  def instagram
+    render "instagram/instagram_show"
+  end
+
   private
 
   def getalbums
