@@ -18,24 +18,26 @@
       width: 1124px;
     }
     a {
-      text-decoration: none; 
+      text-decoration: none;
     }
     .album {
       margin: 3px;
       .album-title {
-        text-align: center;
-        color: $dark-orange;
-      }
-      &:hover {
-        color: $light-orange;
+        display: table;
+        margin: auto;
+        color: $pale-yellow;
+        // &:hover {
+        // color: $light-orange;
+        // }
       }
       img {
         border: 4px solid $light-orange;
         width: 250px;
         height: 250px;
-        // margin: 3px;
+        display: table;
+        margin: auto;
         &:hover {
-          border-color: $dark-orange;
+          border-color: $pale-yellow;
         }
         @media only screen and (min-width: $break-xs){
           width: 300px;
@@ -56,4 +58,85 @@
       }
     }
   }
+}
+
+.fa-bandcamp {
+  color: $pale-yellow;
+  &:hover {
+    color: $light-orange;
+  }
+}
+
+.admin-links {
+  display: table;
+  margin: auto;
+  margin-top: 5px;
+  a {
+    margin: 2px;
+  }
+}
+
+.new-album-button {
+  display: inline-block;
+  height: 250px;
+  width: 250px;
+  border: 1px dashed $pale-yellow;
+  text-align: center;
+  a {
+    color: $pale-yellow;
+    vertical-align: middle;
+    line-height: 250px;
+    font-size: 7em;
+  }
+  &:hover {
+    border-color: $light-orange;
+    a {
+      color: $light-orange;
+    }
+  }
+}
+
+
+.album-show-page {
+  .outer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  strong {
+    color: $light-orange;
+  }
+  .artist{
+    margin-right: 10px;
+  }
+  .album-description {
+    margin-top: 20px;
+    max-width: 450px;
+  }
+  .check-it-out {
+    margin-top: 20px;
+  }
+  .title-year {
+    h1 {
+      display: inline-block;
+    }
+    .year {
+      vertical-align: top;
+      display: inline-block;
+    }
+  }
+  .hide-btn-container {
+    height: 80px;
+    .hide-partial-btn {
+      margin-top: 30px;
+      position: absolute;
+      bottom:10px;
+      right:25px;
+    }
+  }
+
+}
+
+.hidden {
+  display: none;
 }

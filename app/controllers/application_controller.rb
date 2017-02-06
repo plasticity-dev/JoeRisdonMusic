@@ -7,13 +7,14 @@ class ApplicationController < ActionController::Base
   end
 
   def index
+    @albums = Album.all
     render "home/index"
   end
 
   private
 
   def getalbums
-    
+
   end
 
   def getinsta

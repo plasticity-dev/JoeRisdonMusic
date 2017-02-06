@@ -1,0 +1,41 @@
+@import 'variables';
+
+.new-album-page {
+  form {
+    margin-top: 30px;
+  }
+  .form-group {
+    margin: auto;
+    .form-control{
+      font-size: 1.1em;
+      height: 60px;
+    }
+    .text-area {
+      height: 120px;
+    }
+  }
+  .sm-form-item {
+    padding: 0px;
+  }
+
+  .number-spinner{
+    padding: 0;
+    span {
+      width: 100%;
+    }
+    #spinner {
+      height:60px;
+      margin: -1px;
+      border: none;
+    }
+  }
+
+  .btn-block {
+    margin-top: 20px;
+  }
+
+  .back-button {
+    margin-top: 15px;
+    margin-left: 15px;
+  }
+}

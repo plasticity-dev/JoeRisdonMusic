@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+  <% @albums.each do |album| %>
+    <div id="album-<%=album.id%>" class="hidden album-info">
+      <%= render :partial => 'info_show', locals: {:album => album} %>
+    </div>
+  <% end %>
+
+<div class="albums container">
+  <h1>Albums</h1>
+  <div class="albums-container row">
+
+    <% @albums.each do |album| %>
+      <div class="album">
+        <div class="album-link-img">
+          <%= link_to(image_tag("#{album.artwork_url}", style: "height:250px; width: 250px; "), album, remote: true, id: album.id) %>
+        </div>
+        <p class="album-title">
+          <%= album.title %> ( <%= album.year %> ) &#160&#160
+          <%= link_to("<i class='fa fa-lg fa-bandcamp'></i>".html_safe, album.bandcamp_link, :target => "_blank" )%>
+        </p>
+        <p class="admin-links">
+          <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
+          <%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-primary" %>
+        </p>
+      </div>
+    <% end %>
+
+    <div class="new-album-button">
+        <%= link_to "+", new_album_path %>
+    </div>
+
+  </div>
+</div>
+
+<div id="div_id"></div>
+
+<script>
+  $(document).on('turbolinks:load', function() {
+    $('.hidden').hide();
+
+    $(".album-link-img > a").on('click', function(e){
+      e.preventDefault();
+      var id = $(this).attr('id');
+      $('.album-info').hide();
+      $('#album-'+id).show();
+    })
+
+    $(".hide-partial-btn").on('click', function(){
+      $('.album-info').hide();
+    })
+
+  });
+</script>

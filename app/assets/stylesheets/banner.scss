@@ -11,9 +11,15 @@
     .header-text{
       display: inline-block;
       font-family: $header-fontstack;
-      color: $pale-yellow;
       font-size: 6em;
+      a {
+        text-decoration: none;
+        color: $pale-yellow;
+        &:hover {
+          text-decoration: underline;
+        }
       }
+    }
     .img-container{
       display: inline-block;
 
@@ -32,9 +38,13 @@
       text-align: center;
     }
     .img-container {
-      display: block;
-      width: 215px;
-      margin-left:27%;
+      width: 100%;
+      .main-logo {
+        display: block;
+        width: 215px;
+        margin-left:auto;
+        margin-right:auto;
+      }
     }
   }
 }

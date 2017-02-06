@@ -2,24 +2,15 @@
   <h1 class="container">Albums</h1>
 
   <div class="albums-container row">
-    <!-- <div class="album">
-      <%= image_tag('buffalo3.jpg', class: "") %>
-      <p class="album-title">BeefStock Collection (2017)</p>
-    </div> -->
-    <a href="https://joerisdon.bandcamp.com/releases" target="blank">
-      <div class="album">
-        <%= image_tag('homegrownart.jpg', class: "") %>
-        <p class="album-title">Homegrown (2016)</p>
-      </div>
-    </a>
-    <!-- <div class="album">
-      <%= image_tag('buffalo2.jpg', class: "") %>
-      <p class="album-title">II (2013)</p>
-    </div>
-    <div class="album">
-      <%= image_tag('buffalo1.jpg', class: "") %>
-      <p class="album-title">I (2012)</p>
-    </div> -->
+    <% @albums.each do |album| %>
+      <a href='/albums/<%=album.id%>'>
+        <div class="album">
+          <%= image_tag(album.artwork_url, class: "") %>
+          <p class="album-title"><%= album.title %> <%= album.year %></p>
+        </div>
+      </a>
+    <% end %>
+
   </div>
 
 </div>
