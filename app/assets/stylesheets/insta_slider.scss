@@ -2,7 +2,9 @@
 
 .instagram {
   margin-top: 40px;
-
+  a {
+    color: $pale-yellow;
+  }
   .photos_container {
     margin: auto;
     margin-top: 20px;
@@ -44,5 +46,81 @@
         height: 250px;
       }
     }
+  }
+}
+
+.instagram-page {
+  .insta-header a {
+    color: $pale-yellow;
+    &:hover {
+      color: $dark-orange
+    }
+  }
+  img{
+    max-width: 400px;
+  }
+  .grid {
+    margin: auto;
+    max-width: 1200px;
+    @media only screen and (max-width: $break-md) {
+      margin: auto;
+    }
+    @media only screen and (max-width: $break-sm) {
+      margin-left: 45px;
+    }
+    @media only screen and (max-width: $break-xs) {
+      margin-left: -3px;
+    }
+  }
+  /* clearfix */
+  .grid:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  /* ---- grid-item ---- */
+  .grid-item {
+    width: 200px;
+    height: 200px;
+    float: left;
+    img{
+      width: 200px;
+      height: 200px;
+    }
+    @media only screen and (max-width: $break-sm) {
+      width: 300px;
+      height: 300px;
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+
+  .grid-item--gigante {
+    width: 400px;
+    height: 400px;
+    img {
+      width: 400px;
+      height: 400px;
+    }
+    @media only screen and (max-width: $break-sm) {
+      width: 300px;
+      height: 300px;
+      img {
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+  .grid-item:hover {
+    cursor: pointer;
+  }
+}
+
+.insta-link a {
+  color: $pale-yellow;
+  &:hover {
+    color: $dark-orange;
   }
 }
