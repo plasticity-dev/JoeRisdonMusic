@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
 <div class="container album-show-page">
+  <!-- Main page that shows an album and its data -->
 
-  <div class="row">
+    <div class="album-info">
+      <%= render :partial => 'info_show', locals: {:album => @album} %>
+    </div>
+
+    <div class="all-albums"/>
+    <%= render :partial => 'index', locals: {:albums => @albums} %>
+    </div>
+  <!-- <div class="row">
 
     <aside class="col-lg-6 col-md-7 outer-block">
       <div class="inner-block">
@@ -42,6 +50,6 @@
   <div class="admin-buttons hide-btn-container mt-3">
     <%= link_to 'Edit', edit_album_path(@album), class: "btn btn-primary" %>
     <%= link_to 'All Albums', albums_path, class: "btn float-right hide-partial-btn btn-primary" %>
-  </div>
+  </div> -->
 
 </div>

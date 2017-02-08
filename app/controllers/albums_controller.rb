@@ -10,6 +10,8 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    @albums = Album.all
+    @album = Album.find(params[:id])
   end
 
   # GET /albums/new
@@ -69,6 +71,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:title, :track_count, :year, :artist, :bandcamp_link, :artwork_url, :description, :release_date)
+      params.require(:album).permit(:title, :bc_embed, :track_count, :year, :artist, :bandcamp_link, :artwork_url, :description, :release_date)
     end
 end
