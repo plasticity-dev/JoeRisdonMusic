@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <div class="container album-show-page">
 
   <div class="row">
@@ -9,13 +8,17 @@
           <h1><%= album.title %></h1>
           <h5 class="year">( <%= album.year %> )</h5>
         </div>
-        <%= image_tag("#{album.artwork_url}", style: "width: 350px; height: 350px;")%>
+        <% if album.bc_embed %>
+            <div style="background-image: url('<%=album.artwork_url%>'); background-size: 350px 350px; width: 350px; height: 350px;"> <%= raw album.bc_embed %> </div>
+        <% else %>
+          <%= image_tag("#{album.artwork_url}", style: "width: 350px; height: 350px;")%>
+        <% end %>
       </div>
     </aside>
 
     <aside class="col-lg-6 col-md-5 outer-block mt-3">
       <div class="inner-block">
-        <div class="artist-and-track-count">
+  <div class="artist-and-track-count">
           <span class="artist"> <strong class="mr-2">Artist:</strong> <%= album.artist %> </span>
           <span class="track-count"> <strong>Tracks:</strong> <%= album.track_count %> </span>
         </div>
@@ -34,10 +37,13 @@
           <strong class="mr-2">Check it out now:</strong>
           <%= link_to("<i class='fa fa-bandcamp fa-lg'></i>".html_safe, album.bandcamp_link, target: "_blank" ) %>
         </div>
+
+        <p class="admin-links">
+          <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
+          <%= link_to 'Delete', album, method: :delete, data: { confirm: "Are you sure you want to delete #{album.title}?" }, class: "btn btn-sm btn-primary" %>
+        </p>
+
       </div>
     </aside>
-  </div>
-  <div class="hide-btn-container">
-    <div class="btn float-right btn-primary hide-partial-btn">Close</div>
   </div>
 </div>

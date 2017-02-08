@@ -2,7 +2,15 @@
 
 
 .albums {
+  .all-albums-link {
+    color: $pale-yellow;
+    font-family: $header-fontstack;
+    font-size: 1.5em;
+    // text-decoration: underline;
+    letter-spacing: 2px;
+  }
   .header-link {
+    display: block;
     color: $pale-yellow;
   }
   .albums-container {

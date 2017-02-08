@@ -2,15 +2,14 @@
   <%= link_to("<h1 class='container'>Albums</h1>".html_safe, "/albums", class: "header-link") %>
 
   <div class="albums-container row">
-    <% @albums.each do |album| %>
+    <% @albums[0..4].each do |album| %>
       <a href='/albums/<%=album.id%>'>
         <div class="album">
           <%= image_tag(album.artwork_url, class: "") %>
-          <p class="album-title"><%= album.title %> <%= album.year %></p>
+          <p class="album-title"><%= album.title %> (<%= album.year %>)</p>
         </div>
       </a>
     <% end %>
-
   </div>
-
+  <%=link_to("All Albums", "/albums", class: "text-center all-albums-link", style: "display: block;")%>
 </div>

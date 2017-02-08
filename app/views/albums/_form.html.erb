@@ -32,6 +32,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :bc_embed %>
+    <%= f.text_field :bc_embed %>
+  </div>
+
+  <div class="field">
     <%= f.label :artwork_url %>
     <%= f.text_field :artwork_url %>
   </div>
@@ -45,6 +50,7 @@
     <%= f.label :release_date %>
     <%= f.date_select :release_date %>
   </div>
+
 
   <div class="actions">
     <%= f.submit %>
