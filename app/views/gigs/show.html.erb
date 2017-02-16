@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container gig-show-page">
+
+  <div class="row">
+    <aside class="col-lg-6 col-md-7 outer-block">
+      <div class="map inner-block">
+        <iframe width="350" height="350" frameborder="0" style="border:0" src="//www.google.com/maps/embed/v1/place?q=<%="#{@gig.venue},+#{@gig.street},+#{@gig.city}+#{@gig.state}"%>&zoom=17&key=AIzaSyAokwDA1udys6F0K7Xc3XWGJKtu453qjDM"></iframe>
+      </div>
+    </aside>
+
+    <aside class="col-lg-6 col-md-5 outer-block mt-3">
+      <div class="date-time"><%= @gig.date.strftime('%b %e @ %l:%M %p ') %></div>
+
+      <div>
+        <strong class="mr-2">Artist: </strong> <%= @gig.band_name %>
+      </div>
+      <div class="mt-2">
+        <strong class="mr-2">Venue: </strong> <%= @gig.venue %>, <%= @gig.city %> <%= @gig.state %>
+      </div>
+      <div class="show-description">
+        <strong class="mr-2">Info: </strong> <%= @gig.description %>
+      </div>
+      <% if @gig.url != "" %>
+        <div class="mr-2"><%=link_to('More info', @gig.url )%></div>
+      <% end %>
+      <div class="mt-2">
+        <%= link_to 'Edit', edit_gig_path(@gig), class: "btn btn-sm btn-primary" %> |
+        <%= link_to 'Destroy', @gig, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-primary" %>
+      </div>
+
+    </aside>
+  </div>
+
+  <%= render "index", local: {:@gigs => @gigs}%>
+
+
+</div>

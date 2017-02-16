@@ -8,11 +8,16 @@ class ApplicationController < ActionController::Base
 
   def index
     @albums = Album.all
+    @gigs = Gig.order(:date)[0..2]
     render "home/index"
   end
 
   def instagram
     render "instagram/instagram_show"
+  end
+
+  def merch
+    render "merch/merch"
   end
 
   private

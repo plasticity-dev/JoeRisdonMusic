@@ -1,0 +1,81 @@
+// Place all the styles related to the Gigs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
+
+.gigs-index {
+  table {
+    tr {
+      vertical-align: middle !important;
+    }
+    .row-header {
+      background-color: #333;
+      vertical-align: middle;
+      text-align: center;
+      .date {
+        font-size: 1.5em;
+        margin-bottom: 0;
+        a {
+          color: $pale-yellow;
+        }
+      }
+    }
+    .info {
+      text-align: center;
+       font-size: 1.3em;
+      //  font-family: $header-fontstack;
+       letter-spacing: 1px;
+       a {
+         color: $pale-yellow;
+       }
+     }
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  }
+  .table th, .table td {
+       border-top: none !important;
+   }
+
+  .spacer  {
+    height: 15px;
+  }
+}
+
+.gig-show-page {
+  .outer-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .map {
+    background: image-url("loading.gif") center center no-repeat;
+  }
+  .date-time {
+    font-family: $header-fontstack;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  strong {
+    color: $light-orange;
+    font-family: $header-fontstack;
+    letter-spacing: 1px;
+  }
+  .show-description {
+    margin-top: 10px;
+    max-width: 450px;
+  }
+}
+
+.all-shows-link {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: $header-fontstack;
+  color: $pale-yellow;
+  &:hover {
+   color: $pale-yellow;
+ }
+}

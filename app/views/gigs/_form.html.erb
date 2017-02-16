@@ -1,0 +1,35 @@
+<%= form_for(gig) do |f| %>
+  <% if gig.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gig.errors.count, "error") %> prohibited this gig from being saved:</h2>
+
+      <ul>
+      <% gig.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group row col-md-8">
+    <%= f.label :date, class: "mr-2"%>
+    <%= f.datetime_select :date, prompt: {year: 'Year', day: 'Day', month: 'Month'}, minute_step: 15, order: [:month, :day,:year], start_year: 2017, ampm: true, required: true %>
+
+    <%= f.text_field :band_name, class: "form-control mt-1", placeholder: "Band Name", required: true %>
+
+    <%= f.text_field :venue, class: "form-control", placeholder: "Venue Name", required: true %>
+
+    <%= f.text_field :street, class: "form-control", placeholder: "Street # and Name ex. 1339 Stonepointe Dr. ", required: true %>
+
+    <%= f.text_field :city, class: "form-control", placeholder: "City" %>
+
+    <%= f.text_field :state, class: "form-control", placeholder: "State Abreviation" %>
+
+    <%= f.text_area :description, class: "form-control text-area", placeholder: "Description", rows:10; %>
+
+    <%= f.text_field :url, class: "form-control", placeholder: "Url (optional)" %>
+
+    <%= f.submit "Add Show", type: "submit", class: "btn btn-block btn-primary col-xs-12" %>
+
+
+  </div>
+<% end %>
