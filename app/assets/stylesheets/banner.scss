@@ -21,10 +21,17 @@
       }
     }
     .img-container{
-      display: inline-block;
-
+      display: block;
+      margin: auto;
       .main-logo{
-        height: 250px;
+        display: block;
+        margin: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        max-width: 400px;
+        &:hover {
+          opacity: 0.9;
+          }
         }
       }
     }
@@ -42,8 +49,8 @@
       .main-logo {
         display: block;
         width: 215px;
-        margin-left:auto;
         margin-right:auto;
+        margin-left:auto;
       }
     }
   }

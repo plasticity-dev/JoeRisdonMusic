@@ -14,7 +14,7 @@
     <div class="nav-spacer hidden-md-up"></div>
     <div class="index">
       <!-- <header>JOE RISDON</header> -->
-      <%= render "/banner"%>
+      <div class="hidden-sm-down"><%= render "/banner"%></div>
 
       <!-- regular justified nav-bar -->
       <!-- As of BS4.alpha6 .nav-justified will not work w/ .navbar-toggleable -->
@@ -37,7 +37,7 @@
           <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars fa-2x"></i>
           </button>
-          <a class="navbar-brand" href="/">JOE RISDON</a>
+          <a class="navbar-brand" href="/"><%= image_tag('textlogo.png', width: '120px')%></a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav nav">
                 <li class="nav-item">
@@ -69,7 +69,7 @@
             <%=link_to("<i class='fa fa-facebook fa-2x'></i>".html_safe, "https://www.facebook.com/joerisdonsongs/", target: 'blank')%>
             <%=link_to("<i class='fa fa-youtube fa-2x'></i>".html_safe, "https://www.youtube.com/channel/UCkIsdG0MQnU8HkVqWLYPyWw", target: 'blank') %>
             <%=link_to("<i class='fa fa-bandcamp fa-2x'></i>".html_safe, "https://joerisdon.bandcamp.com/", target: 'blank') %>
-            <%=link_to("<i class='fa fa-envelope fa-2x'></i>".html_safe, "#", target: 'blank') %>
+            <%=link_to("<i class='fa fa-envelope fa-2x'></i>".html_safe, "#") %>
           </div>
         </div>
       </contact>
