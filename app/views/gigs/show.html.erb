@@ -24,11 +24,12 @@
       <% if @gig.url != "" %>
         <div class="mr-2"><%=link_to('More info', @gig.url )%></div>
       <% end %>
-      <div class="mt-2">
-        <%= link_to 'Edit', edit_gig_path(@gig), class: "btn btn-sm btn-primary" %> |
-        <%= link_to 'Destroy', @gig, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-primary" %>
-      </div>
-
+      <% if user_signed_in? %>
+        <div class="mt-2">
+          <%= link_to 'Edit', edit_gig_path(@gig), class: "btn btn-sm btn-primary" %> |
+          <%= link_to 'Destroy', @gig, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-primary" %>
+        </div>
+      <% end %>
     </aside>
   </div>
 
