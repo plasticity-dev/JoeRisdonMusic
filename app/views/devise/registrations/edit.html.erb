@@ -1,0 +1,39 @@
+<div class="container form-page">
+  <h1>Change Password</h1>
+  <div class="form-group row col-md-6 ml-3">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label 'Email', class: '' %>
+        <%= f.email_field :email, class: "form-control", autofocus: true %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label 'New Password', class: 'mt-3' %>
+        <% if @minimum_password_length %>
+          <em>( <%= @minimum_password_length %> characters minimum )</em>
+        <% end %><br />
+        <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, class: "mt-3" %><br />
+        <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password, class: 'mt-3 mb-0' %><br> <i class="mb-2">(You'll need your current password to make changes)</i><br />
+        <%= f.password_field :current_password, class: "form-control", autocomplete: "off" %>
+      </div>
+
+      <div class="actions mt-3">
+        <%= f.submit "Update", class: "btn btn-block btn-primary col-xs-12" %>
+      </div>
+    <% end %>
+  </div>
+</div>

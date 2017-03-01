@@ -37,11 +37,12 @@
           <strong class="mr-2">Check it out now:</strong>
           <%= link_to("<i class='fa fa-bandcamp fa-lg'></i>".html_safe, album.bandcamp_link, target: "_blank" ) %>
         </div>
-
+<% if user_signed_in? %>
         <p class="admin-links">
           <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
           <%= link_to 'Delete', album, method: :delete, data: { confirm: "Are you sure you want to delete #{album.title}?" }, class: "btn btn-sm btn-primary" %>
         </p>
+<% end %>
 
       </div>
     </aside>

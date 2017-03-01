@@ -17,5 +17,7 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'New Show', new_gig_path, class: "btn btn-primary" %>
+  <% if user_signed_in? %>
+    <%= link_to 'New Show', new_gig_path, class: "btn btn-primary" %>
+  <% end %>
 </div>

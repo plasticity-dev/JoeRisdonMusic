@@ -13,16 +13,19 @@
           <%= album.title %> ( <%= album.year %> ) &#160&#160
           <!-- <%= link_to("<i class='fa fa-lg fa-bandcamp'></i>".html_safe, album.bandcamp_link, :target => "_blank" )%> -->
         </p>
-        <p class="admin-links">
-          <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
-          <%= link_to 'Delete', album, method: :delete, data: { confirm: "Are you sure you want to delete #{album.title}?" }, class: "btn btn-sm btn-primary" %>
-        </p>
+        <% if user_signed_in? %>
+          <p class="admin-links">
+            <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
+            <%= link_to 'Delete', album, method: :delete, data: { confirm: "Are you sure you want to delete #{album.title}?" }, class: "btn btn-sm btn-primary" %>
+          </p>
+        <% end %>
       </div>
     <% end %>
-
+  <% if user_signed_in? %>
     <div class="new-album-button">
         <%= link_to "+", new_album_path %>
     </div>
+  <% end %>
 
   </div>
 </div>
