@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def index
     @albums = Album.all
-    @gigs = Gig.future_dates[0..2]
+    @gigs = Gig.order(date: :desc)
     render "home/index"
   end
 
