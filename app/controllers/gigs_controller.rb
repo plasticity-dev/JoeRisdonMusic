@@ -10,7 +10,7 @@ class GigsController < ApplicationController
   # GET /gigs/1
   # GET /gigs/1.json
   def show
-    @gigs = Gig.future_dates[0..2]
+    @gigs = Gig.order(date: :desc)
   end
 
   # GET /gigs/new
