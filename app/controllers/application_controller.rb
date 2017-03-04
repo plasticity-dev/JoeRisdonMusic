@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :instagramposts
+  skip_before_action :verify_authenticity_token
 
   def instagramposts
     @images = getinsta
@@ -19,6 +20,27 @@ class ApplicationController < ActionController::Base
   def merch
     render "merch/merch"
   end
+
+  def bookjoe
+    render "booking/booking"
+  end
+
+  def mailer
+    if params[:name] && params[:message] && params[:email]
+      emailer = Postmark::ApiClient.new("8322da93-f1ea-40dc-be10-135be461d1dd")
+      emailer.deliver(
+      from: 'booking@joerisdon.com',
+      to: 'booking@joerisdon.com',
+      subject: 'Booking from JoeRisdon.com',
+      text_body: "You have a new message from #{params[:name]}:\n\n #{params[:message]} \n\n Please respond to #{params[:email]}")
+      flash[:notice] = "Message successfully sent"
+      redirect_to "/"
+    else
+      flash[:notice] = "Message did not send"
+    end
+    return status
+  end
+
 
   private
 

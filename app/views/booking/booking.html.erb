@@ -1,0 +1,27 @@
+<div class="container booking-page">
+  <h1>Book Joe</h1>
+
+  <div class="form form-group col-md-9 container">
+    <form action="/mailer" method="post">
+
+      <div class="row mb-0">
+        <div class="form-group col-sm-6">
+          Name:<br>
+          <input type="text" name="name" class="form-control" placeholder="Name" required="true">
+          <br>
+        </div>
+        <div class="form-group col-sm-6">
+          Email:<br>
+          <input type="text" name="email" class="form-control" placeholder="example@email.com" required="true">
+          <br>
+        </div>
+      </div>
+      Message:<br>
+      <textarea type="textarea" name="message" class="form-control"></textarea>
+      <br><br>
+          <input type="submit" value="SEND MESSAGE" class="btn submit-button col-sm-12 btn-primary text-center">
+
+    </form>
+  </div>
+  <!-- <button><%= link_to "Send Mail", mailer_path({name: "Test Name", message: "Test Message", email: "TestEmail@email.com"}), :method=> :post %></button> -->
+</div>
