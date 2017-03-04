@@ -5,7 +5,7 @@
 <div class="container gigs-index">
   <table class="table">
     <tbody>
-      <% @gigs.each do |gig| %>
+      <% @gigs.future_dates.each do |gig| %>
           <tr class="col-sm-10 table-row">
             <td scope="row" class="row-header">
               <h1 class="date" ><%= link_to("#{gig.date.strftime('%b')}<br>#{gig.date.strftime('%e')}".html_safe, gig) %></h1>
@@ -17,6 +17,22 @@
       <% end %>
     </tbody>
   </table>
+  <h1 class="mb-5 ">Past Shows</h1>
+  <table class="table">
+    <tbody>
+      <% @gigs.past_dates.each do |gig| %>
+          <tr class="col-sm-10 table-row">
+            <td scope="row" class="row-header">
+              <h1 class="date" ><%= link_to("#{gig.date.strftime('%b')}<br>#{gig.date.strftime('%e')}".html_safe, gig) %></h1>
+            </td>
+              <td class="info" ><%=link_to( gig.band_name, gig )%></td>
+              <td class="info" ><%=link_to( "#{gig.venue}, #{gig.city} #{gig.state}", gig ) %></td>
+          </tr>
+          <tr class="spacer"><td></td></tr>
+      <% end %>
+    </tbody>
+  </table>
+
   <% if user_signed_in? %>
     <%= link_to 'New Show', new_gig_path, class: "btn btn-primary" %>
   <% end %>
