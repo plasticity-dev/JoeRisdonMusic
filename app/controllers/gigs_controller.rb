@@ -4,13 +4,13 @@ class GigsController < ApplicationController
   # GET /gigs
   # GET /gigs.json
   def index
-    @gigs = Gig.order(:date)
+    @gigs = Gig.order(date: :desc)
   end
 
   # GET /gigs/1
   # GET /gigs/1.json
   def show
-    @gigs = Gig.order(:date)[0..2]
+    @gigs = Gig.order(date: :desc)[0..2]
   end
 
   # GET /gigs/new
