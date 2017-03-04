@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container gig-show-page">
 
   <div class="row">
@@ -25,7 +23,7 @@
       <% end %>
       <% if @gig.url != "" %>
         <div class="mt-2">
-          <strong class="mr-2">Link: </strong><%= link_to('More info', @gig.url ) %>
+          <strong class="mr-2">Link: </strong> <%= link_to 'More info', extlink(@gig.url), target: 'blank' %>
         </div>
       <% end %>
 
