@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 
   def mailer
     if params[:name] && params[:message] && params[:email]
-      emailer = Postmark::ApiClient.new("8322da93-f1ea-40dc-be10-135be461d1dd")
+      emailer = Postmark::ApiClient.new(ENV['POSTMARK'])
       emailer.deliver(
       from: 'booking@joerisdon.com',
       to: 'booking@joerisdon.com',

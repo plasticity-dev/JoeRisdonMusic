@@ -8,6 +8,7 @@ gem 'postmark-rails'
 gem 'postmark'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+gem 'dotenv-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
