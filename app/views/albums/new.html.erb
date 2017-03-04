@@ -3,8 +3,10 @@
   <script>
     $(document).on('turbolinks:load', function() {
       $("#spinner").spinner()
+      var dateFormat = $( "#datepicker" ).datepicker( "option", "dateFormat" );
       $("#datepicker").datepicker({
-        changeYear: true
+        changeYear: true,
+        dateFormat: "yy-mm-dd"
       });
     });
   </script>
