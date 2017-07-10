@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
 
   def getinsta
     require 'uri'
-    string = "https://www.instagram.com/joerisdonsongs/media/"
+    string = "https://www.instagram.com/joerisdonandthe815/media/"
     uri = URI(string)
     response = Net::HTTP.get_response(uri)
     response_body = JSON.parse(response.body)
