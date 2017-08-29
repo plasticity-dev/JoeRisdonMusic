@@ -12,9 +12,10 @@
 //
 //= require tether
 //= require jquery
-//= require jquery_ujs
-//= require jquery-ui
+//= require jquery-ui/widgets/spinner
+//= require jquery-ui/widgets/datepicker
 //= require bootstrap-sprockets
-//= require bootstrap
+//= require bootstrap/dropdown
+//= require bootstrap/button
 //= require turbolinks
 //= require_tree .
