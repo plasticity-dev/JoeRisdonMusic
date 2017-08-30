@@ -19,4 +19,3 @@
 //= require bootstrap/util
 //= require bootstrap/button
 //= require turbolinks
-//= require_tree .
