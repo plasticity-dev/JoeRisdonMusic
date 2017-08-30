@@ -4,7 +4,7 @@
   <div class="grid">
     <% instagramposts[0..20].each do |image| %>
     <% p image %>
-      <div class="grid-item"> <img data-original="<%=image['images']['standard_resolution']['url']%>" alt="Caption: <%=image['caption']['text']%>" src="http://www.appelsiini.net/projects/lazyload/img/grey.gif"> </div>
+      <div class="grid-item"> <img data-src="<%=image['images']['standard_resolution']['url']%>" alt="Caption: <%=image['caption']['text']%>"> </div>
     <% end %>
   </div>
 
