@@ -3,6 +3,32 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'variables';
 
+
+.gigs-homepage {
+  .header {
+    font-size: 60px;
+  }
+  .section {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+    .info {
+      padding: 10px 20px;
+      //sets min to at least 10px
+      font-size: calc(10px + 1.7vw);
+      font-family: $header-fontstack;
+      a {
+        color: $pale-yellow;
+      }
+    }
+    .dots {
+      flex: 1;
+      font-size: 40px;
+      overflow: hidden;
+    }
+  }
+}
+
 .gigs-index {
   table {
     tr {
