@@ -1,6 +1,6 @@
 class GigsController < ApplicationController
   before_action :set_gig, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_user, only: [:edit, :new, :update, :destroy]
   # GET /gigs
   # GET /gigs.json
   def index
@@ -66,6 +66,10 @@ class GigsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_gig
       @gig = Gig.find(params[:id])
+    end
+
+    def check_user
+      redirect_to root_path  if !user_signed_in?
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
