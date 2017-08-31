@@ -4,7 +4,7 @@
 @import 'variables';
 
 
-.gigs-homepage {
+.gigs-homepage, .gigs-index {
   text-shadow: 1px 1px black;
   margin-bottom: 8vw;
   .header {
@@ -39,42 +39,15 @@
 }
 
 .gigs-index {
-  table {
-    tr {
-      vertical-align: middle !important;
-    }
-    .row-header {
-      background-color: #333;
-      vertical-align: middle;
-      text-align: center;
-      .date {
-        font-size: 1.5em;
-        margin-bottom: 0;
-        a {
-          color: $pale-yellow;
-        }
-      }
-    }
-    .info {
-      text-align: center;
-       font-size: 1.3em;
-      //  font-family: $header-fontstack;
-       letter-spacing: 1px;
-       a {
-         color: $pale-yellow;
-       }
-     }
-  td {
+  .header {
     text-align: center;
-    vertical-align: middle;
+    margin-bottom: 3vw;
   }
+  .future-shows {
+    margin-bottom: 50px;
   }
-  .table th, .table td {
-       border-top: none !important;
-   }
-
-  .spacer  {
-    height: 15px;
+  .shows-container {
+    padding-bottom: 5vw;
   }
 }
 
@@ -83,6 +56,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  .iframe html{
+    border: 5px solid $pale-yellow;
   }
   .map {
     background: image-url("loading.gif") center center no-repeat;
@@ -94,13 +70,22 @@
     letter-spacing: 1px;
   }
   strong {
-    color: $light-orange;
+    color: $pale-yellow;
     font-family: $header-fontstack;
     letter-spacing: 1px;
   }
   .show-description {
     margin-top: 10px;
     max-width: 450px;
+  }
+  .row {
+    padding-bottom: 5vw;
+  }
+  .gig-info {
+    font-size: calc(10px + 1.4vw);
+  }
+  .gigs-homepage {
+    margin-top: 10vw;
   }
 }
 
