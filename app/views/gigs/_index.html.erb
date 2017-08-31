@@ -3,12 +3,12 @@
 
   <div class="container">
 
-    <% @gigs.future_dates[0..2].each do |gig| %>
+    <% @gigs.future_dates[0..4].each do |gig| %>
       <div class="section">
         <div class="info"><%=link_to( "#{gig.date.strftime('%b')} #{gig.date.strftime('%e')}", gig )%></div>
         <span class="dots">...........................................................................................
         </span>
-        <div class="info"><%=link_to( "#{gig.venue}, #{gig.city} #{gig.state}", gig ) %></div>
+        <div class="info"><%=link_to( "#{gig.city} #{gig.state}", gig ) %></div>
       </div>
     <% end %>
 

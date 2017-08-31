@@ -5,13 +5,17 @@
 
 
 .gigs-homepage {
+  text-shadow: 1px 1px black;
+  margin-bottom: 8vw;
   .header {
-    font-size: 60px;
+    font-size: calc(20px + 3vw);
+    margin-bottom: -40px;
   }
   .section {
     display: flex;
     align-items: baseline;
     margin-bottom: 10px;
+    height: 40px;
     .info {
       padding: 10px 20px;
       //sets min to at least 10px
@@ -19,13 +23,18 @@
       font-family: $header-fontstack;
       a {
         color: $pale-yellow;
+        text-shadow: 1px 1px black;
       }
     }
     .dots {
       flex: 1;
       font-size: 40px;
+      max-height: 50px;
       overflow: hidden;
     }
+  }
+  .all-shows-link{
+    margin-top: 4vw;
   }
 }
 

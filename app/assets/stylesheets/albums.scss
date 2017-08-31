@@ -151,3 +151,31 @@
 .hidden {
   display: none;
 }
+
+.showcase {
+ padding: 30px;
+ padding-top: 0px;
+  h1 {
+    text-align: center;
+    font-size: calc(20px + 3.5vw);
+  }
+  .header {
+    margin-bottom: 6vw;
+  }
+  iframe {
+    width:30vw;
+    height: 30vw;
+    min-width: 310px;
+    min-height: 310px;
+    border: 5px solid $pale-yellow;
+    background: url('loading.gif') no-repeat center center;
+    background-size: 50px;
+  }
+  .album-art{
+    border: 5px solid $pale-yellow;
+    img{
+      width: 30vw;
+      min-width: 310px;
+    }
+  }
+}
