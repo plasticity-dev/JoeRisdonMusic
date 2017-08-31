@@ -5,12 +5,20 @@
 html
   background-color: $background-color-brown
   text-transform: uppercase
+  height: 100%
   h1
     font-family: $header-fontstack
   body
     background-color: $background-color-brown
     color: $pale-yellow
     font-family: $body-fontstack
+    position: relative
+    min-height: 100%
+    padding-bottom: 6rem
+    background-image: url("the815onStage.jpg")
+    background-position: bottom
+    background-repeat: no-repeat
+    background-size: 110%
     .nav-spacer
       height: 1px
       background-color: $light-orange
@@ -18,7 +26,9 @@ html
   .container
     margin-top: 4%
 
-
+.nav
+  color: rgba(0,0,0,0)
+  
 header
   font-size: 5em
   text-align: center
@@ -46,24 +56,36 @@ header
     color: $dark-orange !important
 
 footer
-  background-color: $gray
-  margin-top: 70px
-  padding: 20px
+  position: absolute
+  bottom: 0
+  right: 0
+  left: 0
+  padding: 1rem
+  .bookjoe, i
+    color: $pale-yellow
+    margin: 0
   .bookjoe
-    display: block
-    &:hover
-      text-decoration: none
-      color: $dark-orange
-  h1
-    color: $background-color-grey
-    font-weight: bold
-    text-align: center
-  .social-nav
-    .icons
-      padding: 10px
-      text-align: center
-    i
-      padding: 10px
-      color: black
-      &:hover
-        color: $dark-orange
+    font-size: calc(15px + 2vw)
+
+// footer
+//   margin-top: 70px
+//   padding: 20px
+//   .bookjoe
+//     display: block
+//     color: $pale-yellow
+//     &:hover
+//       text-decoration: none
+//       color: $dark-orange
+//   h1
+//     color: $background-color-grey
+//     font-weight: bold
+//     text-align: center
+//   .social-nav
+//     .icons
+//       padding: 10px
+//       text-align: center
+//     i
+//       padding: 10px
+//       color: black
+//       &:hover
+//         color: $dark-orange
