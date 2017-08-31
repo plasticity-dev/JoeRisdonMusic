@@ -153,29 +153,41 @@
 }
 
 .showcase {
- padding: 30px;
- padding-top: 0px;
-  h1 {
-    text-align: center;
-    font-size: calc(20px + 3.5vw);
-  }
+  padding: 30px;
+  padding-top: 0px;
   .header {
     margin-bottom: 6vw;
+    h1 {
+      text-align: center;
+      font-size: calc(20px + 3.5vw);
+    }
   }
   iframe {
     width:30vw;
     height: 30vw;
     min-width: 310px;
     min-height: 310px;
+    max-width:697px;
+    max-height:697px;
     border: 5px solid $pale-yellow;
     background: url('loading.gif') no-repeat center center;
     background-size: 50px;
   }
-  .album-art{
-    border: 5px solid $pale-yellow;
-    img{
-      width: 30vw;
-      min-width: 310px;
-    }
+}
+
+@media only screen and (min-width: $break-lg) {
+  .showcase {
+    margin-bottom: 10vw;
+  }
+  .gigs-homepage {
+    padding-bottom: 10vw;
+  }
+}
+@media only screen and (min-width: $break-xl) {
+  .showcase {
+    margin-bottom: 300px;
+  }
+  .gigs-homepage {
+    padding-bottom: 10vw;
   }
 }
