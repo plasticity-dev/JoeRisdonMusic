@@ -19,11 +19,7 @@
         <strong>Tracks:</strong> <%= album.track_count %>
       </div>
 
-      <% if album.description.length > 0 %>
-        <div class="album-description">
-          <strong class="mr-2">Description:</strong> <%= album.description %>
-        </div>
-      <% end %>
+
 
       <div class="release-date">
         <strong class="mr-2">Release Date:</strong> <nobr><%= album.release_date.strftime("%B %d, %Y") %></nobr>
@@ -33,6 +29,12 @@
         <strong class="mr-2">Check it out now:</strong>
         <%= link_to("<i class='fa fa-bandcamp fa-lg'></i>".html_safe, album.bandcamp_link, target: "_blank" ) %>
       </div>
+
+      <% if album.description.length > 0 %>
+        <div class="album-description">
+          <strong class="mr-2">Description:</strong> <%= album.description %>
+        </div>
+      <% end %>
 
     </div>
     <% if user_signed_in? %>
