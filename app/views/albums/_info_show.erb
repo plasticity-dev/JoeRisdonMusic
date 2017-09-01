@@ -1,50 +1,47 @@
-<div class="container album-show-page">
+<div class="album-show-page">
 
-  <div class="row">
+  <div class="title"><%= album.title %></div>
+  <div class="d-flex album-content justify-content-center align-items-center flex-wrap flex-lg-nowrap">
+    <div class="album-art">
+      <% if album.bc_embed.length > 0 %>
+        <%= raw album.bc_embed %>
+      <% else %>
+        <%= image_tag("#{album.artwork_url}", class: 'album-image')%>
+      <% end %>
+    </div>
+    <div class="album-info">
 
-    <aside class="col-lg-6 col-md-7 outer-block">
-      <div class="inner-block">
-        <div class="title-year">
-          <h1><%= album.title %></h1>
-          <h5 class="year">( <%= album.year %> )</h5>
-        </div>
-        <% if album.bc_embed %>
-            <div style="background-image: url('<%=album.artwork_url%>'); background-size: 350px 350px; width: 350px; height: 350px;"> <%= raw album.bc_embed %> </div>
-        <% else %>
-          <%= image_tag("#{album.artwork_url}", style: "width: 350px; height: 350px;")%>
-        <% end %>
+      <div class="artist">
+        <strong class="mr-2">Artist:</strong> <%= album.artist %>
       </div>
-    </aside>
 
-    <aside class="col-lg-6 col-md-5 outer-block mt-3">
-      <div class="inner-block">
-        <div class="artist-and-track-count">
-          <span class="artist"> <strong class="mr-2">Artist:</strong> <%= album.artist %> </span>
-          <span class="track-count"> <strong>Tracks:</strong> <%= album.track_count %> </span>
-        </div>
+      <div class="track-count">
+        <strong>Tracks:</strong> <%= album.track_count %>
+      </div>
 
-        <% if album.description.length > 0 %>
+      <% if album.description.length > 0 %>
         <div class="album-description">
-            <strong class="mr-2">Description:</strong> <%= album.description %>
+          <strong class="mr-2">Description:</strong> <%= album.description %>
         </div>
-        <% end %>
+      <% end %>
 
-        <div class="release-date mt-3">
-          <strong class="mr-2">Release Date:</strong> <nobr><%= album.release_date.strftime("%B %d, %Y") %></nobr>
-        </div>
-
-        <div class="check-it-out">
-          <strong class="mr-2">Check it out now:</strong>
-          <%= link_to("<i class='fa fa-bandcamp fa-lg'></i>".html_safe, album.bandcamp_link, target: "_blank" ) %>
-        </div>
-<% if user_signed_in? %>
-        <p class="admin-links">
-          <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
-          <%= link_to 'Delete', album, method: :delete, data: { confirm: "Are you sure you want to delete #{album.title}?" }, class: "btn btn-sm btn-primary" %>
-        </p>
-<% end %>
-
+      <div class="release-date">
+        <strong class="mr-2">Release Date:</strong> <nobr><%= album.release_date.strftime("%B %d, %Y") %></nobr>
       </div>
-    </aside>
+
+      <div class="check-it-out">
+        <strong class="mr-2">Check it out now:</strong>
+        <%= link_to("<i class='fa fa-bandcamp fa-lg'></i>".html_safe, album.bandcamp_link, target: "_blank" ) %>
+      </div>
+
+    </div>
+    <% if user_signed_in? %>
+      <p class="admin-links">
+        <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
+        <%= link_to 'Delete', album, method: :delete, data: { confirm: "Are you sure you want to delete #{album.title}?" }, class: "btn btn-sm btn-primary" %>
+      </p>
+    <% end %>
   </div>
+
+  <%=link_to("All Albums", "/albums", class: "text-center all-albums-link", style: "display: block;")%>
 </div>
