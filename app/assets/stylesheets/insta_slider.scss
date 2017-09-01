@@ -50,23 +50,35 @@
 }
 
 .instagram-page {
-  .insta-header a {
-    color: $pale-yellow;
+  margin-bottom: 8vw;
+  .insta-header {
+    font-size: calc(20px + 3vw);
+    text-align: center;
+    margin-bottom: 2vw;
+    a {
+      color: $pale-yellow;
+    }
+
     &:hover {
-      color: $dark-orange
+      color: $dark-orange;
     }
   }
+  .insta-link {
+    text-shadow: 1px 1px black;
+    padding-top: 2vw;
+  }
   img{
-    max-width: 400px;
+    max-width: 500px;
   }
   .grid {
-    margin: auto;
+    margin: 10vw auto;
     max-width: 1200px;
-    @media only screen and (max-width: $break-md) {
+    @media only screen and (max-width: $break-lg) {
       margin: auto;
     }
     @media only screen and (max-width: $break-sm) {
-      margin-left: 45px;
+      margin: auto;
+      width: 300px !important;
     }
     @media only screen and (max-width: $break-xs) {
       margin-left: -3px;

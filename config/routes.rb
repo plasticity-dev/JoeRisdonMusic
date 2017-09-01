@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'admin', to: 'devise/sessions#new'
     get 'admin/edit', to: 'devise/registrations#edit'
+    get 'users/sign_out', to: 'devise/sessions#destroy'
   end
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}

@@ -1,13 +1,13 @@
 <div class="container gig-show-page">
 
-  <div class="row">
-    <aside class="col-lg-6 col-md-7 outer-block">
+  <div class="row justify-content-around">
+    <aside class="outer-block">
       <div class="map inner-block">
-        <iframe width="350" height="350" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<%="#{@gig.map_venue},+#{@gig.street},+#{@gig.city}+#{@gig.state}"%>&zoom=17&key=AIzaSyAokwDA1udys6F0K7Xc3XWGJKtu453qjDM"></iframe>
+        <iframe width="350" height="350" frameborder="0" style="border: 5px solid #ffd36f;" src="https://www.google.com/maps/embed/v1/place?q=<%="#{@gig.map_venue},+#{@gig.street},+#{@gig.city}+#{@gig.state}"%>&zoom=17&key=AIzaSyAokwDA1udys6F0K7Xc3XWGJKtu453qjDM"></iframe>
       </div>
     </aside>
 
-    <aside class="col-lg-6 col-md-5 outer-block mt-3">
+    <aside class="outer-block gig-info mt-3">
       <div class="date-time"><%= @gig.date.strftime('%b %e @ %l:%M %p ') %></div>
 
       <div>

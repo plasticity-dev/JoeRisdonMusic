@@ -1,12 +1,44 @@
 @import 'variables';
 
+.albums-index {
+  text-shadow: 1px 1px black;
+  .artist-section {
+    margin: 5vw auto;
+    .artist-name {
+      font-size: calc(40px + 2.5vw);
+      text-align: center;
+    }
+    .album-section {
+      .album-info {
+        .album-title {
+          text-align: center;
+          font-family: $header-fontstack;
+          font-size: calc(10px + .5vw);
+        }
+        .album-art {
+          padding:1vw 2vw;
+          img {
+            border: 5px solid $pale-yellow;
+            width: 300px;
+            height: 300px;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }// .album-info
+    } // .album-section
+  }
+}
+
+
 
 .albums {
   .all-albums-link {
     color: $pale-yellow;
     font-family: $header-fontstack;
     font-size: 1.5em;
-    // text-decoration: underline;
+
     letter-spacing: 2px;
   }
   .header-link {
@@ -19,9 +51,7 @@
     @media only screen and (min-width: $break-xs){
       width: 318px;
     }
-    // @media only screen and (min-width: $break-sm){
-    //   width: 468px;
-    // }
+
     @media only screen and (min-width: $break-md) {
       width: 568px;
     }
@@ -37,9 +67,6 @@
         display: table;
         margin: auto;
         color: $pale-yellow;
-        // &:hover {
-        // color: $light-orange;
-        // }
       }
       img {
         border: 4px solid $light-orange;
@@ -71,10 +98,11 @@
   }
 }
 
-.fa-bandcamp {
+.fa-bandcamp{ 
+  font-size: calc(10px + 1vw);
   color: $pale-yellow;
   &:hover {
-    color: $light-orange;
+    color: $dark-orange;
   }
 }
 
@@ -107,47 +135,103 @@
   }
 }
 
-
+// SINGLE ALBUM SHOW PAGE CSS BELOW
 .album-show-page {
-  .outer-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  padding-top: 20px;
+  margin-bottom: 20vw;
+  width: 90%;
+  margin: auto;
+  text-shadow: 1px 1px black;
+  .title {
+    text-align: center;
+    font-family: $header-fontstack;
+    font-size: calc(20px + 4vw);
+    padding-bottom: 3vw;
   }
-  strong {
-    color: $light-orange;
-  }
-  .artist{
-    margin-right: 10px;
-  }
-  .album-description {
-    margin-top: 20px;
-    max-width: 450px;
-  }
-  .check-it-out {
-    margin-top: 20px;
-  }
-  .title-year {
-    h1 {
-      display: inline-block;
-    }
-    .year {
-      vertical-align: top;
-      display: inline-block;
+  .album-art {
+    iframe, .album-image{
+      width:30vw !important;
+      height: 30vw !important;
+      min-width: 310px;
+      min-height: 310px;
+      max-width: 450px;
+      max-height: 450px;
+      border: 5px solid $pale-yellow !important;
+      background: url('loading.gif') no-repeat center center;
+      background-size: 50px;
     }
   }
-  .hide-btn-container {
-    height: 80px;
-    .hide-partial-btn {
-      margin-top: 30px;
-      position: absolute;
-      bottom:10px;
-      right:25px;
+  .album-info {
+    font-size: calc(10px + 1.5vw);
+    padding: 2vw;
+    strong {
+      color: $pale-yellow;
+      font-family: $header-fontstack;
+      letter-spacing: 1px;
     }
   }
-
+  .all-albums-link {
+    font-family: $header-fontstack;
+    color: $pale-yellow;
+    font-size: calc(10px + 3vw);
+    padding-top: 8vw;
+    padding-bottom: 6vw;
+  }
 }
+@media only screen and (min-width: $break-lg) {
+  .album-content, .album-show-page {
+    margin-bottom: 10vw;
+  }
+}
+@media only screen and (min-width: $break-xl) {
+  .album-content, .album-show-page {
+    margin-bottom: 300px;
+  }
+}
+
+
 
 .hidden {
   display: none;
+}
+
+// SHOWCASE ON HOME PAGE CSS BELOW
+.showcase {
+  padding: 30px;
+  padding-top: 0px;
+  .header {
+    margin-bottom: 6vw;
+    h1 {
+      text-align: center;
+      font-size: calc(20px + 3.5vw);
+    }
+  }
+  iframe {
+    width:30vw;
+    height: 30vw;
+    min-width: 310px;
+    min-height: 310px;
+    max-width:697px;
+    max-height:697px;
+    border: 5px solid $pale-yellow;
+    background: url('loading.gif') no-repeat center center;
+    background-size: 50px;
+  }
+}
+
+@media only screen and (min-width: $break-lg) {
+  .showcase {
+    margin-bottom: 10vw;
+  }
+  .gigs-homepage {
+    padding-bottom: 10vw;
+  }
+}
+@media only screen and (min-width: $break-xl) {
+  .showcase {
+    margin-bottom: 300px;
+  }
+  .gigs-homepage {
+    padding-bottom: 10vw;
+  }
 }
