@@ -1,31 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<div class="albums container">
-  <h1>Albums</h1>
-  <div class="albums-container row">
+<div class="albums-index container">
 
-    <% @albums.each do |album| %>
-      <div class="album">
-        <div class="album-link-img">
-          <%= link_to(image_tag("#{album.artwork_url}", style: "height:250px; width: 250px; "), album, id: album.id) %>
-        </div>
-        <p class="album-title">
-          <%= album.title %> ( <%= album.year %> ) &#160&#160
-          <!-- <%= link_to("<i class='fa fa-lg fa-bandcamp'></i>".html_safe, album.bandcamp_link, :target => "_blank" )%> -->
-        </p>
-        <% if user_signed_in? %>
-          <p class="admin-links">
-            <%= link_to 'Edit', edit_album_path(album), class: "btn btn-sm btn-primary" %>
-            <%= link_to 'Delete', album, method: :delete, data: { confirm: "Are you sure you want to delete #{album.title}?" }, class: "btn btn-sm btn-primary" %>
-          </p>
+  <% @collection.each do |artist| %>
+    <div class="artist-section">
+      <h1 class="artist-name"><%= artist[0] %></h1>
+      <div class="album-section d-flex justify-content-center flex-wrap">
+        <% artist[1].each do |album| %>
+          <div class="album-info">
+            <div class="album-art"><%= link_to(image_tag("#{album.artwork_url}"), album, id: album.id) %></div>
+            <div class="album-title"><%= album.title %> - <%= album.year %></div>
+          </div>
         <% end %>
       </div>
-    <% end %>
-  <% if user_signed_in? %>
-    <div class="new-album-button">
-        <%= link_to "+", new_album_path %>
     </div>
   <% end %>
 
-  </div>
 </div>
