@@ -12,6 +12,7 @@
 //
 //= require tether
 //= require jquery
+//= require jquery_ujs 
 //= require jquery-ui/widgets/spinner
 //= require jquery-ui/widgets/datepicker
 //= require bootstrap/dropdown
