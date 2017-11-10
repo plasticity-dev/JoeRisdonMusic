@@ -1,14 +1,8 @@
 <%= javascript_include_tag "lazyLoader.min.js", "data-turbolinks-track" => true  %>
-<div class="container instagram-page">
+<div class="container instagram-page" style="background-color: black;">
   <h1 class="container insta-header"><%=link_to("Instagram  <i class='fa fa-instagram' aria-hidden='true'></i>".html_safe, "https://www.instagram.com/joerisdonandthe815/", target: 'blank')%> </h1>
 
-  <div class="grid">
-    <% instagramposts[0..14].each do |image| %>
-    <% p image %>
-      <div class="grid-item"> <img data-src="<%=image['images']['standard_resolution']['url']%>" alt="<%=image['caption']['text'][0..8]%>..."> </div>
-    <% end %>
-  </div>
-
+<h1 class="text-center" style="color:#aa4919;"> Instagram changed some usage rules, bear with us while we get it fixed. </h1>
   <h1 class="text-center mt-4 insta-link"><%=link_to("Check out Joe's Instagram","https://www.instagram.com/joerisdonandthe815/", target: 'blank')%></h1>
 
 </div>
