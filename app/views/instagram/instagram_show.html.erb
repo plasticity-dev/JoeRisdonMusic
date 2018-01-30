@@ -1,11 +1,24 @@
 <%= javascript_include_tag "lazyLoader.min.js", "data-turbolinks-track" => true  %>
-<div class="container instagram-page" style="background-color: black;">
+<div class="container instagram-page">
   <h1 class="container insta-header"><%=link_to("Instagram  <i class='fa fa-instagram' aria-hidden='true'></i>".html_safe, "https://www.instagram.com/joerisdonandthe815/", target: 'blank')%> </h1>
 
-<h1 class="text-center" style="color:#aa4919;"> Instagram changed some usage rules, bear with us while we get it fixed. </h1>
+  <div class="grid">
+      <% @posts[0..30].each do |post| %>
+        <div class="grid-item">
+          <img src="<%= post.image %>" alt="">
+        </div>
+      <% end %>
+    </div>
+
   <h1 class="text-center mt-4 insta-link"><%=link_to("Check out Joe's Instagram","https://www.instagram.com/joerisdonandthe815/", target: 'blank')%></h1>
 
 </div>
+
+  <!-- <% @posts.each do |post| %>
+    <a href="<%= post.link %>" target="_blank"> <img src="<%= post.image %>" alt=""> </a>
+  <% end %> -->
+
+
 
 <script>
   var $grid = $('.grid').masonry({

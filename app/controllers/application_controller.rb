@@ -1,11 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :instagramposts
+  helper_method :instagram_posts
   skip_before_action :verify_authenticity_token
-
-  def instagramposts
-    @images = getinsta
-  end
 
   def index
     @albums = Album.all
@@ -14,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def instagram
+    @posts = instagram_posts
     render "instagram/instagram_show"
   end
 
@@ -48,12 +45,9 @@ class ApplicationController < ActionController::Base
 
   end
 
-  def getinsta
-    require 'uri'
-    string = "https://www.instagram.com/joerisdonandthe815/media/"
-    uri = URI(string)
-    response = Net::HTTP.get_response(uri)
-    response_body = JSON.parse(response.body)
-    return response_body['items']
+  def instagram_posts
+    require 'insta_scrape'
+    return InstaScrape.long_scrape_user_posts("joerisdonandthe815", 1)
   end
+
 end
