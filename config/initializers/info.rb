@@ -1,0 +1,6 @@
+INSTAGRAM_LINK = "https://www.instagram.com/joerisdonandthe815/"
+INTAGRAM_USERNAME = "JoeRisdonandThe815"
+FACEBOOK_LINK = "https://www.facebook.com/JoeRisdonandThe815/"
+YOUTUBE_LINK = "https://www.youtube.com/channel/UCkIsdG0MQnU8HkVqWLYPyWw"
+BANDCAMP_LINK = "https://joerisdon.bandcamp.com/"
+MERCH_LINK = "https://joerisdon.bandcamp.com/merch"

@@ -6,6 +6,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'devise'
 gem 'postmark-rails'
 gem 'postmark'
+gem 'insta_scrape'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 gem 'dotenv-rails'
@@ -32,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'popper_js', '~> 1.12.9'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

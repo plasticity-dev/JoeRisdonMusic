@@ -1,105 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Joe Risdon Music</title>
-    <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- Social OG meta tags START -->
-    <meta property="og:title" content="Joe Risdon Music 'The 815 Tapes' Out Now!">
-    <meta property="og:description" content="'The 815 Tapes' Out Now">
-    <meta property="og:image" content="http://www.joerisdon.com/images/fb_og_img3.jpg">
-    <meta property="og:url" content="http://www.joerisdon.com">
-
-    <meta name="twitter:title" content="Joe Risdon Music">
-    <meta name="twitter:description" content="'The 815 Tapes' Out Now">
-    <meta name="twitter:image" content="http://www.joerisdon.com/images/fb_og_img3.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <!-- Social END -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
-    <script src="https://use.fontawesome.com/a0f97c16fd.js"></script>
+    <%= render "layouts/head_content" %>
   </head>
 
   <body>
-    <div class="nav-spacer hidden-md-up"></div>
-    <div class="index">
-      <div class="hidden-sm-down"><%= render "/banner"%></div>
-
-      <!-- regular justified nav-bar -->
-      <!-- As of BS4.alpha6 .nav-justified will not work w/ .navbar-toggleable -->
-        <ul class="nav nav-justified hidden-sm-down">
-          <li class="nav-item">
-            <a class="nav-link" href="/albums">Music</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/insta">Feed</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/gigs">Tour</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://joerisdon.bandcamp.com/merch" target="blank">Merch</a>
-          </li>
-          <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'nav-link') %>
-          </li>
-          <% end %>
-        </ul>
-        <!-- collapsed navbar -->
-        <nav class="navbar fixed-top navbar-toggleable-md  navbar-inverse hidden-md-up">
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fa fa-bars fa-2x"></i>
-          </button>
-          <a class="navbar-brand" href="/"><%= image_tag('815Text.svg', width: '120px')%></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="/albums">Music</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/insta">Feed</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/gigs">Shows</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="https://joerisdon.bandcamp.com/merch" target="blank">Merch</a>
-                </li>
-                <% if user_signed_in? %>
-                  <li class="nav-item">
-                    <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'nav-link') %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    </div>
-
-    <% if flash[:notice] %>
-      <div class="container">
-        <div class="notice"><%= flash[:notice] %></div>
-      </div>
-    <% end %>
-
+    <%= render "layouts/navbar" %>
+    <%= render "layouts/flash_notice" %>
     <%= yield %>
-
-    <footer>
-      <contact>
-        <div class="social-nav d-flex justify-content-around align-items-center">
-          <%=link_to("<i class='fa fa-instagram fa-2x'></i>".html_safe,"https://www.instagram.com/joerisdonandthe815/", target: 'blank')%>
-          <%=link_to("<i class='fa fa-facebook fa-2x'></i>".html_safe, "https://www.facebook.com/JoeRisdonandThe815/", target: 'blank')%>
-          <a href="/bookjoe" class="bookjoe">
-            <h1 class="bookjoe">Book Joe</h1>
-          </a>
-          <%=link_to("<i class='fa fa-youtube fa-2x'></i>".html_safe, "https://www.youtube.com/channel/UCkIsdG0MQnU8HkVqWLYPyWw", target: 'blank') %>
-          <%=link_to("<i class='fa fa-bandcamp fa-2x'></i>".html_safe, "https://joerisdon.bandcamp.com/", target: 'blank') %>
-          <!-- <%=link_to("<i class='fa fa-envelope fa-2x'></i>".html_safe, "/bookjoe") %> -->
-        </div>
-      </contact>
-    </footer>
-
+    <%= render 'layouts/footer' %>
   </body>
 </html>
