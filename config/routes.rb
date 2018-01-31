@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'application/index'
   root 'application#index'
   get '/insta', to: 'instagram#index'
+  get '/insta/update', to: 'instagram#update'
   get '/bookjoe', to: 'application#bookjoe'
   post '/mailer', to: 'application#mailer', as: 'mailer'
 end
