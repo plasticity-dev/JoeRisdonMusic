@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def instagram
-    @posts = instagram_posts
     render "instagram/instagram_show"
   end
 
@@ -39,7 +38,7 @@ class ApplicationController < ActionController::Base
 
   def instagram_posts
     require 'insta_scrape'
-    return InstaScrape.long_scrape_user_posts(INTAGRAM_USERNAME, 1)
+    return InstaScrape.long_scrape_user_posts(INTAGRAM_USERNAME, 0.7)
   end
 
 end
