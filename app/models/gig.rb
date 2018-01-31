@@ -1,5 +1,6 @@
 class Gig < ApplicationRecord
-
+ validates :date, presence: true
+ 
   def map_venue
     self.venue.gsub('&', 'and')
   end

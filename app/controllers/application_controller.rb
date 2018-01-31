@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def instagram
+    @script_link = 'https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js'
     render "instagram/instagram_show"
   end
 
@@ -38,7 +39,7 @@ class ApplicationController < ActionController::Base
 
   def instagram_posts
     require 'insta_scrape'
-    return InstaScrape.long_scrape_user_posts(INTAGRAM_USERNAME, 0.7)
+    return InstaScrape.long_scrape_user_posts(INSTAGRAM_USERNAME, 0.7)
   end
 
 end
