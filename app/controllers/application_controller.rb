@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def instagram
+    @script_link = 'https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js'
     render "instagram/instagram_show"
   end
 

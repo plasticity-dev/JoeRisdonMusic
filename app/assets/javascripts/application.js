@@ -11,12 +11,9 @@
 // about supported directives.
 //
 //= require tether
-//= require jquery3
+//= require jquery3.min.js
 //= require popper
-//= require bootstrap
-//= require jquery_ujs
-//= require jquery-ui/widgets/spinner
-//= require jquery-ui/widgets/datepicker
-
+//= require bootstrap/util
+//= require bootstrap/collapse
 
 //= require turbolinks

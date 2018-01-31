@@ -14,8 +14,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- Social END -->
 
+<%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', defer: true, 'data-turbolinks-track': 'reload' %>
+<% if @script_link %>
+  <script src="<%= @script_link %>"></script>
+<% end %>
 
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js"></script>
 <script src="https://use.fontawesome.com/a0f97c16fd.js"></script>
