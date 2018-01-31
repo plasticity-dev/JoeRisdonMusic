@@ -13,7 +13,7 @@ class InstagramController < ApplicationController
 
   def instagram_posts
     require 'insta_scrape'
-    return InstaScrape.long_scrape_user_posts(INSTAGRAM_USERNAME, 1)
+    return InstaScrape.long_scrape_user_posts(INSTAGRAM_USERNAME, 0.01)
   end
 
   def get_first_post
