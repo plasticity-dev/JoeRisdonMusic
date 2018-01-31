@@ -14,10 +14,6 @@ class ApplicationController < ActionController::Base
     render "instagram/instagram_show"
   end
 
-  def merch
-    render "merch/merch"
-  end
-
   def bookjoe
     render "booking/booking"
   end
@@ -41,13 +37,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def getalbums
-
-  end
-
   def instagram_posts
     require 'insta_scrape'
-    return InstaScrape.long_scrape_user_posts("joerisdonandthe815", 1)
+    return InstaScrape.long_scrape_user_posts(INTAGRAM_USERNAME, 1)
   end
 
 end

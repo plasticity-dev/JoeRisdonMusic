@@ -2,34 +2,25 @@ class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:edit, :new, :update]
 
-  # GET /albums
-  # GET /albums.json
   def index
     @albums = Album.all
     @collection = Album.orderedCollection
   end
 
-  # GET /albums/1
-  # GET /albums/1.json
   def show
     @albums = Album.all
     @album = Album.find(params[:id])
   end
 
-  # GET /albums/new
   def new
     @album = Album.new
   end
 
-  # GET /albums/1/edit
   def edit
   end
 
-  # POST /albums
-  # POST /albums.json
   def create
     @album = Album.new(album_params)
-
     respond_to do |format|
       if @album.save
         format.html { redirect_to @album, notice: 'Album was successfully created.' }
@@ -41,8 +32,6 @@ class AlbumsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /albums/1
-  # PATCH/PUT /albums/1.json
   def update
     respond_to do |format|
       if @album.update(album_params)
@@ -55,8 +44,6 @@ class AlbumsController < ApplicationController
     end
   end
 
-  # DELETE /albums/1
-  # DELETE /albums/1.json
   def destroy
     @album.destroy
     respond_to do |format|
@@ -66,7 +53,6 @@ class AlbumsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_album
       @album = Album.find(params[:id])
     end
@@ -75,7 +61,6 @@ class AlbumsController < ApplicationController
       redirect_to root_path  if !user_signed_in?
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
       params.require(:album).permit(:title, :bc_embed, :track_count, :year, :artist, :bandcamp_link, :artwork_url, :description, :release_date)
     end
