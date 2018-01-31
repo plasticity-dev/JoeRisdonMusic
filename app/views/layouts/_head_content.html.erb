@@ -15,9 +15,10 @@
 <!-- Social END -->
 
 <%= stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'application', defer: true, 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 <% if @script_link %>
-  <script src="<%= @script_link %>"></script>
+<%= javascript_include_tag @script_link, 'data-turbolinks-track': 'reload' %>
 <% end %>
 
 <script src="https://use.fontawesome.com/a0f97c16fd.js"></script>
