@@ -13,7 +13,7 @@
     </div>
   <% end %>
 
-  <div class="form-group gig row col-md-8">
+  <div class="form-group gig row col-md-12">
 
     <span class="date-time"><%= f.datetime_select :date, prompt: {year: 'Year', day: 'Day', month: 'Month'}, minute_step: 15, order: [:month, :day, :year], start_year: 2017, ampm: true, required: true %></span>
 

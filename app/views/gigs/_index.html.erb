@@ -1,5 +1,5 @@
 <div class="container gigs-homepage">
-  <h1 class="container header text-center">Tour</h1>
+  <a href="/gigs" class="all-shows-link"><h1 class="container header text-center">Tour</h1></a>
 
   <div class="container">
 
@@ -12,7 +12,12 @@
       </div>
     <% end %>
 
+    <% if @gigs.future_dates.count == 0 %> <div class="lg-spacer"></div> <% end %>
+
     <%= link_to 'All Dates', gigs_path, class: "all-shows-link text-center" %>
   </div>
-
+  <% if user_signed_in? %>
+  <div class="lg-spacer"></div>
+  <%= link_to 'New Show', new_gig_path, class: "btn new-show-btn btn-primary" %>
+  <% end %>
 </div>

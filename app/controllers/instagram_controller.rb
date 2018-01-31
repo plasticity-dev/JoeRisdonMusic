@@ -18,7 +18,7 @@ class InstagramController < ApplicationController
 
   def get_first_post
     require 'insta_scrape'
-    return InstaScrape.long_scrape_user_posts(INSTAGRAM_USERNAME, 0.1)
+    return InstaScrape.long_scrape_user_posts(INSTAGRAM_USERNAME, 0.01)
   end
 
   def update_if_change_instagram_posts

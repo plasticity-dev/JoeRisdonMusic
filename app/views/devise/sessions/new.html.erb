@@ -1,8 +1,9 @@
 <div class="container form-page">
-  <h1>Admin log in</h1>
 
-  <div class="form-group row col-md-8 ">
+  <div class="form-group row col-lg-8 " style="margin-bottom: 200px">
+
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <h1>Admin log in</h1>
       <div class="field mt-3">
         <%= f.label :email %><br />
         <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: 'Example@gmail.com', required: true %>

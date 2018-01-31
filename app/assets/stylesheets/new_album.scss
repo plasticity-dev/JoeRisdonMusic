@@ -39,3 +39,20 @@
     margin-left: 15px;
   }
 }
+
+.ui-spinner-up {
+  border-bottom: 1px solid darkgray !important;
+}
+
+.form-group.row{
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 0;
+  input, textarea {
+    margin-top: 20px;
+  }
+  .ui-spinner.ui-corner-all.ui-widget.ui-widget-content {
+    margin-top: 20px;
+  }
+}
