@@ -10,9 +10,10 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-group row col-md-8">
+
+  <div class="form-group gig row col-md-8">
     <%= f.label :date, class: "mr-2"%>
-    <%= f.datetime_select :date, prompt: {year: 'Year', day: 'Day', month: 'Month'}, minute_step: 15, order: [:month, :day,:year], start_year: 2017, ampm: true, required: true %>
+    <%= f.datetime_select :date, prompt: {year: 'Year', day: 'Day', month: 'Month'}, minute_step: 15, order: [:month, :day, :year], start_year: 2017, ampm: true, required: true %>
 
     <%= f.text_field :band_name, class: "form-control mt-1", placeholder: "Band Name", required: true %>
 

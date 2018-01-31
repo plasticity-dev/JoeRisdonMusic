@@ -100,3 +100,17 @@
    color: $pale-yellow;
  }
 }
+
+.form-page .gig {
+  // month
+  #gig_date_2i, #gig_date_1i, #gig_date_3i, #gig_date_4i, #gig_date_5i {
+    height: 60px;
+    min-width: 50px;
+    option {
+      font-size: 1.5em;
+    }
+  }
+  #gig_date_2i {
+    width: 120px;
+  }
+}

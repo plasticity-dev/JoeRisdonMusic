@@ -13,7 +13,12 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new
+    if params[:artist]
+      @album = Album.new(artist: params[:artist])
+    else
+      @album = Album.new
+    end
+
   end
 
   def edit
