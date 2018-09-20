@@ -12,20 +12,20 @@
  *
  *= require jquery-ui/datepicker
  *= require jquery-ui/spinner
-
+ *= require_self
  */
 
 @import "bootstrap";
-@import "index";
+@import "main";
 @import "banner";
 @import "albums";
 @import "about";
-@import "insta_slider";
+@import "instagram";
 @import "new_album";
 @import "gigs";
-@import "merch";
 @import "booking";
 @import "errors";
+
 
 
 // works with lazyLoader.js adds gif to background

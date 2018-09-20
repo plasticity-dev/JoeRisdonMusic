@@ -1,0 +1,31 @@
+<%= javascript_include_tag "lazyLoader.min.js", "data-turbolinks-track" => true  %>
+
+<div class="container instagram-page">
+  <h1 class="container insta-header">
+    <%=link_to("Instagram <i class='fa fa-instagram' aria-hidden='true'></i>".html_safe, INSTAGRAM_LINK, target: 'blank')%>
+  </h1>
+
+  <div class="grid">
+    <% @instagram_posts[0..30].each do |post| %>
+      <div class="grid-item">
+        <img data-src="<%= post.image_url %>" alt="">
+      </div>
+    <% end %>
+  </div>
+
+  <h1 class="text-center mt-4 insta-link"><%=link_to("Check out Joe's Instagram",INSTAGRAM_LINK, target: 'blank')%></h1>
+</div>
+
+<script>
+  var $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: 200,
+    fitWidth: true
+  });
+
+  $grid.on( 'click', '.grid-item', function() {
+    $(".grid-item--gigante").removeClass('grid-item--gigante')
+    $( this ).toggleClass('grid-item--gigante');
+    $grid.masonry();
+  });
+</script>

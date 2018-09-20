@@ -100,3 +100,34 @@
    color: $pale-yellow;
  }
 }
+
+.form-page .gig {
+ background-color: white;
+ padding: 30px;
+ border-radius: 10px;
+ * {
+   margin-top:20px;
+ }
+ .date-time {
+   color: white;
+   font-size: 0px;
+   select {
+     height: 40px;
+     font-size: 16px;
+     margin: 2px;
+     border: 1px solid gray;
+   }
+ }
+}
+#gig_date_1i {
+  margin-right: 10px;
+}
+.new-show-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+.lg-spacer{
+  height: 30px;
+}

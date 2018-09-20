@@ -6,10 +6,9 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, :controllers => {:registrations => "users/registrations"}
-
   resources :gigs
   resources :albums
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   get 'application/index'
   root 'application#index'
   get '/merch', to: 'application#merch'

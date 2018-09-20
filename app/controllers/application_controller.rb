@@ -1,11 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :instagramposts
+  helper_method :instagram_posts
   skip_before_action :verify_authenticity_token
-
-  def instagramposts
-    @images = getinsta
-  end
 
   def index
     @albums = Album.all
@@ -14,11 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def instagram
+    @script_link = 'https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.min.js'
     render "instagram/instagram_show"
-  end
-
-  def merch
-    render "merch/merch"
   end
 
   def bookjoe
@@ -44,16 +37,9 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def getalbums
-
+  def instagram_posts
+    require 'insta_scrape'
+    return InstaScrape.long_scrape_user_posts(INSTAGRAM_USERNAME, 0.7)
   end
 
-  def getinsta
-    require 'uri'
-    string = "https://www.instagram.com/joerisdonandthe815/media/"
-    uri = URI(string)
-    response = Net::HTTP.get_response(uri)
-    response_body = JSON.parse(response.body)
-    return response_body['items']
-  end
 end

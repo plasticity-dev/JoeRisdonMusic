@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'posts' %>
+
 <%= form_for(gig) do |f| %>
   <% if gig.errors.any? %>
     <div id="error_explanation">
@@ -10,15 +12,16 @@
       </ul>
     </div>
   <% end %>
-  <div class="form-group row col-md-8">
-    <%= f.label :date, class: "mr-2"%>
-    <%= f.datetime_select :date, prompt: {year: 'Year', day: 'Day', month: 'Month'}, minute_step: 15, order: [:month, :day,:year], start_year: 2017, ampm: true, required: true %>
+
+  <div class="form-group gig row col-md-12">
+
+    <span class="date-time"><%= f.datetime_select :date, prompt: {year: 'Year', day: 'Day', month: 'Month'}, minute_step: 15, order: [:month, :day, :year], start_year: 2017, ampm: true, required: true %></span>
 
     <%= f.text_field :band_name, class: "form-control mt-1", placeholder: "Band Name", required: true %>
 
     <%= f.text_field :venue, class: "form-control", placeholder: "Venue Name", required: true %>
 
-    <%= f.text_field :street, class: "form-control", placeholder: "Street # and Name ex. 1339 Stonepointe Dr. ", required: true %>
+    <%= f.text_field :street, class: "form-control", placeholder: "Street # and Name ex. 1339 Stonepointe Dr. (optional) ", required: false %>
 
     <%= f.text_field :city, class: "form-control", placeholder: "City" %>
 

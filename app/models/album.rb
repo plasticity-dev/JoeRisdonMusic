@@ -1,8 +1,7 @@
 class Album < ApplicationRecord
 
   def year
-    # self.release_date.year
-    2018
+    self.release_date.year
   end
 
   def self.orderedCollection
