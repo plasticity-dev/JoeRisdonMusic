@@ -1,7 +1,8 @@
 class Album < ApplicationRecord
 
   def year
-    self.release_date.year
+    # self.release_date.year
+    2018
   end
 
   def self.orderedCollection
@@ -14,6 +15,12 @@ class Album < ApplicationRecord
         end
       }
       return collection
+  end
+
+  def joesOrder(collection)
+    collection.each { |artist|
+
+    }
   end
 
 end

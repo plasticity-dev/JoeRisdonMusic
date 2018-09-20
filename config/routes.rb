@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'application/index'
   root 'application#index'
-  get '/insta', to: 'application#instagram'
   get '/merch', to: 'application#merch'
   get '/bookjoe', to: 'application#bookjoe'
   post '/mailer', to: 'application#mailer', as: 'mailer'
+
+  get "*any", via: :all, to: "errors#not_found"
 end

@@ -1,3 +1,5 @@
+@import 'variables';
+
 body {
   background-color: #fff;
   color: #333;
@@ -21,14 +23,14 @@ pre {
 }
 
 a {
-  color: #000;
+  color: $pale-yellow;
 
   &:visited {
-    color: #666;
+    color: $dark-orange;
   }
 
   &:hover {
-    color: #fff;
+    color: $light-orange;
     background-color: #000;
   }
 }
