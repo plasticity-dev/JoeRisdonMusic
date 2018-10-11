@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'application/index'
   root 'application#index'
-  get '/merch', to: 'application#merch'
+  # get '/merch', to: 'application#merch'
   get '/bookjoe', to: 'application#bookjoe'
   post '/mailer', to: 'application#mailer', as: 'mailer'
 
