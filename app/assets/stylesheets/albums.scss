@@ -214,12 +214,14 @@
     }
   }
   iframe {
-    width:30vw;
-    height: 30vw;
-    min-width: 310px;
-    min-height: 310px;
-    max-width:697px;
-    max-height:697px;
+    // width:30vw;
+    // height: 50vw;
+    // min-width: 310px;
+    // min-height: 310px;
+    // max-width:697px;
+    // max-height:697px;
+    min-height: 50vw;
+    min-width: 90vw;
     border: 5px solid $pale-yellow;
     background: url('loading.gif') no-repeat center center;
     background-size: 50px;
